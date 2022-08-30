@@ -33,6 +33,9 @@ Console.WriteLine($"{res} is 2-digit number of {num} ");
 32679 -> 6
 */
 /////////////////////////
+
+
+// РЕШЕНИЕ НЕ СОВСЕМ ПРАВИЛЬНОЕ: ИЩУ ТРЕТЬЮ С КОНЦА ЦИФРУ
 /*
 void FindNum(int a)
 {
@@ -40,7 +43,10 @@ void FindNum(int a)
     hund = a%1000;
     b = hund%10; 
     c = hund/100;
-
+    while (a > 999)
+    {
+        a = a / 10;
+    }   
     if(a<=99)
         Console.WriteLine("a третьей цифры-то нет!");
     if((a>100)&&(a<1000))
@@ -55,6 +61,32 @@ int x = Convert.ToInt32(Console.ReadLine());
 FindNum(x);
 */
 
+////////////////////////////////////////////////
+// ПРАВИЛЬНОЕ РЕШЕНИЕ: ТРЕТЬЯ ЦИФРА СЛЕВА ДЛЯ ЧИСЕЛ ЛЮБОЙ РАЗРЯДНОСТИ
+// НЕ ИСКАЛ РЕШЕНИЕ С МАССИВАМИ И Т.Д., ПЫТАЛСЯ РЕШИТЬ ЗАДАЧУ В РАМКАХ ТОГО ЧТО ПОКА ПРОХОДИЛИ
+
+/*
+void FindNum(int a)
+{
+    int b;
+    
+    while (a > 999)
+    {
+        a = a / 10;
+    }  
+    b = a%10; 
+    if(a<=99)
+        Console.WriteLine("a третьей цифры-то нет!");
+    if((a>100)&&(a<1000))
+        Console.WriteLine($"третья цифра {b}");
+}
+
+Console.WriteLine("input a");
+int x = Convert.ToInt32(Console.ReadLine());
+
+FindNum(x);
+
+*/
 
 /*
 Задача 15: Напишите программу, которая принимает на вход цифру, 
