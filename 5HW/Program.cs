@@ -103,6 +103,8 @@ Console.WriteLine($"sum of uneven elements is {FindSum(newArray)}");
 
 */
 
+
+/*
 int [] CreateRandomArray(int n, int minVal, int maxVal)
 {
     int [] arr = new int [n];
@@ -112,6 +114,7 @@ int [] CreateRandomArray(int n, int minVal, int maxVal)
     } 
     return arr;
 }
+
 void ShowArray(int [] arr)
 {   
     Console.Write("[");
@@ -121,39 +124,43 @@ void ShowArray(int [] arr)
     Console.WriteLine();
 }
 
-int FindNegSum(int[] arra)
+int FindMinNums(int [] array) /// если это метод, который не возвращает - void
+
 {
-    int sum = 0;
-    for(int i = 0; i < arra.Length; i++)
-        if(arra[i] < 0) sum += arra[i];
-    return sum;
+    int min = array[0];
+    int max = array[0];
+    int i =0;
+
+    for(i = 0; i < array.Length; i++)
+        if(min > array[i])  min =array[i];
+    return min;
+
+
+
 }
- 
- Console.Write("input the sise of your array ");
- int n = Convert.ToInt32(Console.ReadLine());
- 
+int FindMaxNums(int [] array) /// если это метод, который не возвращает - void
+
+{
+    int min = array[0];
+    int max = array[0];
+    int i =0;
+
+
+    for(i = 0; i < array.Length; i++)
+        if(max < array[i])  max =array[i];
+    return max;
+
+}
+
+
 int min =0;
 int max= 100;
-
-int FindMinMaxNums(int [] array) /// если это метод, который не возвращает - void
-
-{
-    int min = 0;
-    int i =0;
-    int result=0;
-for(i = 0; i < array.Length; i++)
-    if(min < array[i]) result = min;
-   
-
-    return result;
-}
-
-//int randNumber = new Random().Next(10, 100);
-//int biggerDigit = FindMinMaxNums(NewArray);
-Console.WriteLine($"Bigger digit of  IS {FindMinMaxNums(array)}");
-
+int n = 10;
 
 int [] newArray = CreateRandomArray(n, min, max);
 
 ShowArray(newArray);
-Console.WriteLine($"sum of negative elements is {FindNegSum(newArray)}");
+
+Console.WriteLine($"The difference of the biggest and the smallest numbers of the array is {FindMaxNums(newArray) - FindMinNums(newArray)}");
+
+*/
