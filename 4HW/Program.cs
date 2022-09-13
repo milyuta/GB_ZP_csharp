@@ -56,8 +56,8 @@ Console.WriteLine($"total is  {SumDig(x)}");
 6, 1, 33 -> [6, 1, 33]
 */
 
-/*
 
+/*
 int [] CreateArray()
 {
     Console.WriteLine($"input the length of new array ");
